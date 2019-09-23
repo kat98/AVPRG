@@ -2,7 +2,17 @@
     <h1> Not my first Website</h1>
 </head>
 <body>
-    Geben Sie eine Midi note ein (0 bis 127)
-    <input type="text" name="midiNote">
+    <form >
+        Geben Sie eine Midi note ein (0 bis 127)
+        <input type="text" name="midiNote">
+        <input type="submit" value= "Wert übermitteln">
+        <script>
+            if(midiNote <=127 && midiNote >=0){
+                wert = allFrequencies[midiNote]
+            }
+        </script>
+        
+        <input type="text" value="wert">
+    </form>
     <script src="script.js"></script>
 </body>
