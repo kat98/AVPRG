@@ -1,18 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <h1> Not my first Website</h1>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
 </head>
 <body>
-    <form >
-        Geben Sie eine Midi note ein (0 bis 127)
-        <input type="text" name="midiNote">
-        <input type="submit" value= "Wert übermitteln">
-        <script>
-            if(midiNote <=127 && midiNote >=0){
-                wert = allFrequencies[midiNote]
-            }
-        </script>
-        
-        <input type="text" value="wert">
-    </form>
-    <script src="script.js"></script>
+    <input id="midi" name="midi" type="text" placeholder="Gib eine Zahl ein">
+    <label for="midi"></label>
+    <button id="btn" type="submit">senden</button>
+
+    <div id="display"></div>
+
+    <script>
+        function getFrequency(){
+            var input_value = document.getElementById('midi').value;
+            
+            for (let index = 0; index < allFrequencies.length; index++) {
+                const element = allFrequencies[input_value];
+                document.getElementById('display').innerHTML = element;
+   
+            }
+        }
+        
+        document.getElementById('btn').addEventListener('click', getFrequency);
+
+    </script>
+    
+    <script src="midi.js"></script>
 </body>
+</html>
